@@ -5,6 +5,68 @@ chai page
 {% endblock %}
 
 
-{% block content %}
+{% comment %} {% block content %}
     <h1>All chai for you</h1>
+
+    <div class='grid grid-cols-3 gap-2 m-4'>
+        {% for chai in chais  %}
+        <div class='bg-blue-800 p-5 rounded'>
+            <img class='rounded shadow-lg' src='{{chai.image.url}}'>
+            <h3 class='text-2xl font-bold'>{{chai.name}}</h3>
+            <a href="#">
+                <button
+                    type = "button"
+                    class ="inline-flex items-center w-[100%] justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus: ring-2 focus: ring-offset-2 focus:ring-orange-500"
+                >
+                    {{chai.type}}-{{chai.id}}
+                </button>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %} {% endcomment %}
+
+{% block content %}
+<div class="max-w-7xl mx-auto px-6 py-10">
+    <h1 class="text-4xl font-bold text-center mb-10 text-gray-800">
+        ☕ All Chai For You
+    </h1>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        {% for chai in chais %}
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+
+            <!-- Image -->
+            <div class="h-[420px] overflow-hidden bg-gray-100">
+                <img
+                    src="{{ chai.image.url }}"
+                    alt="{{ chai.name }}"
+                    class="w-full h-full object-cover hover:scale-105 transition duration-500"
+                >
+            </div>
+
+            <!-- Content -->
+            <div class="p-5">
+                <h3 class="text-2xl font-bold text-gray-800">
+                    {{ chai.name }}
+                </h3>
+
+                <p class="text-gray-500 mt-1">
+                    Premium {{ chai.type }}
+                </p>
+
+                <a href="#" class="block mt-5">
+                    <button
+                        class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 rounded-xl transition duration-300"
+                    >
+                        {{ chai.type }} • #{{ chai.id }}
+                    </button>
+                </a>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
+
