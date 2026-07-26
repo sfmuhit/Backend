@@ -9,6 +9,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
     monospace;
     --color-orange-500: oklch(70.5% 0.213 47.604);
+    --color-green-600: oklch(62.7% 0.194 149.214);
     --color-gray-50: oklch(98.5% 0.002 247.839);
     --color-black: #000;
     --text-3xl: 1.875rem;
@@ -212,8 +213,8 @@
   .bg-gray-50 {
     background-color: var(--color-gray-50);
   }
-  .bg-orange-500 {
-    background-color: var(--color-orange-500);
+  .bg-green-600 {
+    background-color: var(--color-green-600);
   }
   .font-serif {
     font-family: var(--font-serif);
