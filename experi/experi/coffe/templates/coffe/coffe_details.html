@@ -4,8 +4,68 @@
     Coffe Details page
 {% endblock %}
 
-{% block content %}
-    <h1>Chai detail page</h1>
+{% comment %} {% block content %}
+<h1>Chai detail page</h1>
+<div class='flex flex-col size-120 rounded bg-white text-black font-bold'>
+    <img class='size-100 rounded' src="{{coffe.image.url}}" alt="{{coffe.name}}">
     <h3>{{coffe.name}}</h3>
+    <h2>{{coffe.price}}</h2>
     <p>{{coffe.description}}</p>
+</div>
+{% endblock %} {% endcomment %}
+
+{% block content %}
+
+
+<a href="{% url 'all_coffe' %}" class='bg-amber-600 size-20'>
+   
+    <p class='text-3xl text-green-600'><-back</p>
+</a>
+<div class="min-h-screen bg-gray-100 flex items-center justify-center py-10 px-4">
+
+    <div class="max-w-5xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden">
+
+        <div class="grid md:grid-cols-2 gap-8">
+
+            <!-- Image -->
+            <div class="h-[500px] overflow-hidden">
+                <img
+                    src="{{ coffe.image.url }}"
+                    alt="{{ coffe.name }}"
+                    class="w-full h-full object-cover hover:scale-105 transition duration-500"
+                >
+            </div>
+
+            <!-- Details -->
+            <div class="p-8 flex flex-col justify-center">
+
+                <span class="inline-block bg-orange-100 text-orange-600 text-sm font-semibold px-4 py-1 rounded-full mb-4 w-fit">
+                    Premium Coffee
+                </span>
+
+                <div class="flex justify-between items-center mb-4">
+                    <h1 class="text-4xl font-bold text-gray-800">
+                        {{ coffe.name }}
+                    </h1>
+
+                    <span class="text-3xl font-bold text-orange-500">
+                        ${{ coffe.price }}
+                    </span>
+                </div>
+
+                <p class="text-gray-600 leading-8 text-lg">
+                    {{ coffe.description }}
+                </p>
+
+                <button class="mt-8 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-4 rounded-xl transition duration-300">
+                    ☕ Order Now
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 {% endblock %}

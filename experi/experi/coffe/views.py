@@ -3,6 +3,7 @@ from .models import ChaiVarity
 from django.shortcuts import get_object_or_404
 
 def all_coffe(request):
+    ## fetching the data from db 
     coffis = ChaiVarity.objects.all()
     return render(request,'coffe/all_coffe.html',{'coffis':coffis})
 def coffe_details(request,coffe_id):
